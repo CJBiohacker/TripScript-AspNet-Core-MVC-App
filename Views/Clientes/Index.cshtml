@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Carlos.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h1>Clientes</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Crie seu cadastro</a>
+</p>
+@* <table class="table">
+    <thead>
+    <tr>
+    <th>
+    @Html.DisplayName("Nome Completo")
+    </th>
+    <th>
+    @Html.DisplayName("Data de Nascimento")
+    </th>
+    <th>
+    @Html.DisplayName("Endereço")
+    </th>
+    <th>
+    @Html.DisplayName("Celular")
+    </th>
+    <th>Opções</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+    <tr>
+    <td>
+    @Html.DisplayFor(modelItem => item.Nome)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Data_nasc)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Endereco)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Celular)
+    </td>
+    <td>
+    <a class="btn btn-info text-white" asp-action="Edit" asp-route-id="@item.Id_cliente">Editar</a>
+    <a class="btn btn-warning text-white" asp-action="Details" asp-route-id="@item.Id_cliente">Detalhes</a>
+    <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id_cliente">Excluir</a>
+    </td>
+    </tr>
+    }
+    </tbody>
+    </table> *@
+@* @Html.DisplayName("Nome Completo") *@
+
+<div class="d-flex flex-wrap gap-3">
+    @foreach (var item in Model)
+    {
+        <div class="d-flex">
+            <div class="card border-2 border-primary rounded" style="width: 19rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Cliente Nº @Html.DisplayFor(modelItem => item.Id_cliente)</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h6>@Html.DisplayName("Nome Completo")</h6>@Html.DisplayFor(modelItem => item.Nome)
+                    </li>
+                    <li class="list-group-item">
+                        <h6>@Html.DisplayName("Data de Nascimento")</h6>@Html.DisplayFor(modelItem => item.Data_nasc)
+                    </li>
+                    <li class="list-group-item">
+                        <h6>@Html.DisplayName("Endereço")</h6>@Html.DisplayFor(modelItem => item.Endereco)
+                    </li>
+                    <li class="list-group-item">
+                        <h6>@Html.DisplayName("Celular")</h6>@Html.DisplayFor(modelItem => item.Celular)
+                    </li>
+                </ul>
+                <div class="card-body d-flex justify-content-evenly">
+                    <a class="btn btn-info text-white" asp-action="Edit" asp-route-id="@item.Id_cliente">Editar</a>
+                    <a class="btn btn-warning text-white" asp-action="Details" asp-route-id="@item.Id_cliente">Detalhes</a>
+                    <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id_cliente">Excluir</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

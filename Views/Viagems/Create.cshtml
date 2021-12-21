@@ -1,0 +1,57 @@
+﻿@model Carlos.Models.Viagem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar Viagem</h1>
+
+<h4>Viagem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-2">
+                <label asp-for="Destino" class="control-label">Destino</label>
+                <input asp-for="Destino" class="form-control" placeholder="Digite seu destino..." />
+                <span asp-validation-for="Destino" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="Data" class="control-label">Data da Viagem</label>
+                <input asp-for="Data" class="form-control" placeholder="Ex: 15/04/2024" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="Horario" class="control-label">Horário de Partida</label>
+                <input asp-for="Horario" class="form-control" placeholder="Ex: 14h30" />
+                <span asp-validation-for="Horario" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="Quantidade" class="control-label">Quantidade de Passagens</label>
+                <input asp-for="Quantidade" class="form-control" placeholder="Ex: 2" />
+                <span asp-validation-for=" Quantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="Preco" class="control-label">Preço</label>
+                <input asp-for="Preco" class="form-control" placeholder="Ex: 185" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="ClienteId_cliente" class="control-label">Cliente</label>
+                <select asp-for="ClienteId_cliente" class="form-control" asp-items="ViewBag.ClienteId_cliente"></select>
+            </div>
+            <div class="form-group mb-2 mt-3">
+                <input type="submit" value="Confirmar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index"><i class="fas fa-arrow-left">&nbsp;</i>Voltar à lista</a>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

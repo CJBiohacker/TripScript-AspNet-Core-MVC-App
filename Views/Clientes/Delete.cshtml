@@ -1,0 +1,45 @@
+﻿@model Carlos.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Deletar Cliente Cadastrado</h1>
+
+<h3>Você tem certeza disso ?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2 mb-3">
+            @Html.DisplayName("Nome Completo")
+        </dt>
+        <dd class="col-sm-10 mb-3">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2 mb-3">
+            @Html.DisplayName("Data de Nascimento")
+        </dt>
+        <dd class="col-sm-10 mb-3">
+            @Html.DisplayFor(model => model.Data_nasc)
+        </dd>
+        <dt class="col-sm-2 mb-3">
+            @Html.DisplayName("Endereço")
+        </dt>
+        <dd class="col-sm-10 mb-3">
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+        <dt class="col-sm-2 mb-3">
+            @Html.DisplayName("Celular")
+        </dt>
+        <dd class="col-sm-10 mb-3">
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id_cliente" />
+        <input type="submit" value="Deletar" class="btn btn-danger mb-2" /><br>
+        <a asp-action="Index"><i class="fas fa-arrow-left">&nbsp;</i>Voltar à lista</a>
+    </form>
+</div>

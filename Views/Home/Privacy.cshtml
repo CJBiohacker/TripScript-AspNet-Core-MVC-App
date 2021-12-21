@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Contato";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="container col-sm-6">
+    <h2 class="text-center">Dúvidas, Perguntas, Sugestões ?<br>Entre em contato conosco !</h2>
+    <div class="container-sm bg-primary bg-gradient rounded-4 p-4">
+        <div class="mb-sm-3">
+            <label for="nome" class="form-label text-white">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome...">
+        </div>
+        <div class="mb-sm-3">
+            <label for="email" class="form-label text-white">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu email...">
+        </div>
+        <div>
+            <label for="país" class="form-label text-white">País</label><br>
+            <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+                <option selected>Clique e escolha seu país de origem</option>
+                <option value="1">Brasil</option>
+                <option value="2">Canada</option>
+                <option value="3">USA</option>
+                <option value="4">Australia</option>
+                <option value="5">França</option>
+                <option value="6">Alemanha</option>
+                <option value="7">Africa do Sul</option>
+                <option value="8">Moçambique</option>
+                <option value="9">Japão</option>
+                <option value="10">Coréia do Sul</option>
+                <option value="11">China</option>
+                <option value="12">Índia</option>
+                <option value="13">Rússia</option>
+            </select>
+        </div>
+        <label for="assunto" class="form-label text-white">Assunto</label>
+        <textarea class="form-control" id="assunto" rows="5"
+            placeholder="Digite suas dúvidas e/ou perguntas..."></textarea>
+
+        <div class="d-grid gap-2 col-6 col-sm-7 mx-auto mt-3 rounded-3">
+            <button class="btn btn-primary bg-success bg-gradient" type="button">Button</button>
+        </div>
+    </div>

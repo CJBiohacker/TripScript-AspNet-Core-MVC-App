@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Carlos.Models.Viagem>
+
+@{
+    ViewData["Title"] = "Viagem";
+}
+
+<h1>Viagem</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Cadastre sua viagem</a>
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Destino)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Data)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Horario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Preco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente)
+                </th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Destino)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Data)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Horario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantidade)
+                    </td>
+                    <td>
+                        R$&nbsp;@Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente.Nome)
+                    </td>
+                    <td class="d-flex flex-column d-grid gap-2">
+                        <a class="btn btn-info text-white" asp-action="Edit" asp-route-id="@item.Id_viagem">Editar</a>
+                        <a class="btn btn-warning text-white" asp-action="Details"
+                        asp-route-id="@item.Id_viagem">Detalhes</a>
+                        <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id_viagem">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
